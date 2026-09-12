@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>родион берсенев - фронтенд и программирование</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-vignette"></div>
+  <div class="bg-grain"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">РОДИОН БЕРСЕНЕВ</a>
+      <div class="nav-links">
+        <a href="#about">обо мне</a>
+        <a href="#skills">навыки</a>
+        <a href="#process">как работаю</a>
+        <a href="#contact">контакты</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="top">
+      <h1>дароу, я родион</h1>
+      <p class="hero-text">учусь на программиста и параллельно занимаюсь фронтенд-версткой. собираю сильные сайты.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contact">написать мне</a>
+        <a class="btn btn-secondary" href="#about">обо мне</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-head">
+        <h2>коротко о себе</h2>
+      </div>
+      <div class="card about-card">
+        <p>занимаюсь программированием - люблю разбираться, как что устроено изнутри. в последнее время плотно ушел во фронтенд: верстаю страницы, собираю интерфейсы, слежу, чтобы все выглядело аккуратно.</p>
+        <p>это что-то вроде параллельного проекта рядом с учебой, который постепенно превращается в полноценное дело - беру задачи, довожу их до готового результата.</p>
+        <ul class="chips">
+          <li>4 курс</li>
+          <li>фронтенд</li>
+          <li>программирование</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-head">
+        <h2>навыки и направления</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="card-num">1</span>
+          <h3>фронтенд-верстка</h3>
+          <p>собираю страницы с нуля на html и css: аккуратная структура, адаптивность под телефон и десктоп.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">2</span>
+          <h3>программирование</h3>
+          <p>учусь на программиста, мне нравится доводить решение до рабочего состояния и делать на качество.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">3</span>
+          <h3>новые технологии</h3>
+          <p>слежу за тем, что происходит в индустрии, пробую новые подходы на практике.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="section-head">
+        <h2>процесс простой</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h4>обсуждаем задачу</h4>
+          <p>коротко созваниваемся или переписываемся - разбираемся, что нужно и в каком виде.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h4>собираю и верстаю</h4>
+          <p>делаю страницу, показываю промежуточный результат.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h4>доводим до готового</h4>
+          <p>правим по фидбэку и сдаю чистовой вариант, который можно сразу использовать.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="cta card">
+        <h2>есть задача?</h2>
+        <p>пиши в тг</p>
+        <a class="btn btn-primary" href="https://t.me/rodionbersenev" target="_blank" rel="noopener">@rodionbersenev</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>родион берсенев · сайт-визитка</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.card, .step').forEach(function (el) {
+      el.classList.add('reveal');
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
